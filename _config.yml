@@ -2,11 +2,11 @@
 # https://github.com/theme-particlex/hexo-theme-particlex
 
 # Avatar image
-avatar: /images/avatar.jpg
+avatar: /images/head.jpg
 
 # Home page background image
 background:
-    - /images/background.jpg
+    - /images/background3.jpg
 
 # Loading image
 loading: /images/loading.gif
@@ -24,14 +24,14 @@ colors:
 
 # Main menu navigation
 menu:
-    Home:
+    Homepage:
         name: house
         theme: solid
         link: /
     About:
         name: id-card
         theme: solid
-        link: /about
+        link: /2024/11/26/test
     Archives:
         name: box-archive
         theme: solid
@@ -39,21 +39,44 @@ menu:
     Categories:
         name: bookmark
         theme: solid
-        link: /categories
+        link: /categories/杂谈
     Tags:
         name: tags
         theme: solid
-        link: /tags
+        link: /tags/杂谈
+    Links:
+        name: link
+        theme: solid
+        link: /friends
 
 # Side info card
 card:
     enable: true
     description: |
-        Description
-        ...
+        理想主义重症患者
     iconLinks:
+        github:
+            name: github
+            theme: brands
+            link: https://github.com/ziheng5
+        bilibili:
+            name: bilibili
+            theme: brands
+            link: https://space.bilibili.com/3546747278198798
+        qq:
+            name: qq
+            theme: brands
+            link: qq://2199325776
+        discord: 
+            name: discord
+            theme: brands
+            link: https://discord.gg/htf5PNEX
+        kaggle: 
+            name: kaggle
+            theme: brands
+            link: https://www.kaggle.com/ziheng4
+
     friendLinks:
-        Argvchs: https://argvchs.github.io
 
 # Footer info
 footer:
@@ -75,11 +98,22 @@ polyfill:
 # https://highlightjs.org
 highlight:
     enable: true
-    style: github
+    style: vs
+
+# add toc to article
+toc:
+    max_depth: 6
+    min_depth: 2
+    class: toc
+    decodeEntities: false
+    list_number: false
+    anchor:
+        position: after
+        symbol: h3
 
 # KaTeX math rendering
 math:
-    enable: false
+    enable: true
 
 # Image preview
 preview:
@@ -89,26 +123,28 @@ preview:
 crypto:
     enable: false
 
+
 # Search
 search:
-    enable: false
+    enable: true
 
 # giscus
 # https://github.com/giscus/giscus
 giscus:
     enable: false
     src: https://giscus.app/client.js
-    repo:
-    repoID:
-    category:
-    categoryID:
+    repo: ziheng5/ziheng5.github.io
+    repoID: R_kgDONTCwmA
+    category: Announcements
+    categoryID: DIC_kwDONTCwmM4Cqj_g
     mapping: pathname
     strict: 0
     reactionsEnabled: 1
     emitMetadata: 0
     inputPosition: bottom
-    theme: preferred_color_scheme
-    lang:
+    theme: light
+    lang: zh-CN
+    crossorigin: anonymous
 
 # Gitalk
 # https://github.com/gitalk/gitalk
@@ -129,7 +165,7 @@ waline:
     serverURL: # Waline server address url, you should set this to your own link
     locale: # Locale: https://waline.js.org/guide/client/i18n.html#locale-option
     commentCount: true # If false, comment count will only be displayed in post page, not in home page
-    pageview: false # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`
+    pageview: true # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`
     emoji: # Custom emoji
         - https://unpkg.com/@waline/emojis@1.2.0/weibo
         - https://unpkg.com/@waline/emojis@1.2.0/alus
@@ -156,3 +192,38 @@ twikoo:
     region:
     path: location.pathname
     lang:
+
+# FriendLinks
+my_friends:
+    清風之戀:
+        url: https://blog.qingfengzl.top/
+        avatar: https://blog.qingfengzl.top/_astro/matsuri.CKUHXjMu_Z1Oql9k.webp
+        desc: '清風之戀の空想森林'
+    SeanDictionary:
+        url: https://seandictionary.top
+        avatar: https://seandictionary.top/wp-content/uploads/2024/09/哭哭_透明.png
+        desc: '一个苦逼的IoT学生'
+    594飞飘:
+        url: https://feipiao594.github.io
+        avatar: https://feipiao594.github.io/images/feipiao.gif
+        desc: 'Pray to take back the sunflower that was given out from the bottom of my heart.'
+    Kingpoem:
+        url: https://kingpoem.github.io
+        avatar: https://kingpoem.github.io/assets/avatar.png
+        desc: "Kingpoem's blog"
+    William Wei:
+        url: https://williamwei.top
+        avatar: https://williamwei.top/links/avatar.webp
+        desc: "Everything will be well. Hopefully."
+    minortex:
+        url: https://blog.texsd.eu.org/
+        avatar: https://blog.texsd.eu.org/imgs/avatar_hu_f1d482a6d93878b9.webp
+        desc: "Nothing's true, everything's permitted."
+    BlueSpace:
+        url: https://blog.bluespace.ren/
+        avatar: https://blog.bluespace.ren/img/soine.png
+        desc: "欢迎来到一个...常年精神内耗者的空间..._"
+    Tianyi Lyu:
+        url: https://lvmolvmo.github.io/
+        avatar: https://lvmolvmo.github.io/images/android-chrome-192x192.png
+        desc: 'From blurry images to clear decisions: I connect the dots, literally. ( ͡° ͜ʖ ͡°)'

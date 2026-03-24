@@ -20,82 +20,8 @@
     margin-right: 10px;
 }
 #archives .categories-tags span a {
-    border: #ffffff80 1px solid;
-    border-radius: 10px;
-    color: #fff;
-    padding: 10px 15px;
-    transition: background 0.25s, border 0.25s, color 0.25s;
-}
-#archives .categories-tags span a:hover {
-    background: #fff !important;
-    border: #a5c2f5 1px solid;
-    color: #5c6b72;
-}
-#archives .category,
-#archives .tags .tag,
-.article .info .category,
-.article .info .tags,
-.article .info .tags .tag {
-    display: inline-block;
-    margin-right: 10px;
-}
-#archives h3 {
-    margin: 10px 0;
-}
-#crypto {
-    margin: 50px 0;
-}
-#crypto.failure {
-    border-color: #ea4a5a;
-    color: #ea4a5a;
-}
-#crypto.failure:focus {
-    box-shadow: 0 0 0 3px #ea4a5a4d;
-}
-#crypto.success {
-    border-color: #34d058;
-    color: #34d058;
-}
-#footer {
-    font-size: 14px;
-    margin-top: 150px;
-    padding-bottom: 20px;
-    text-align: center;
-    width: 100%;
-}
-#footer #footer-icon {
-    color: #66afef;
-    display: inline-block;
-    font-size: 18px;
-    margin: 0 10px;
-}
-#footer #footer-wrap {
-    border-top: 1px solid #aaa;
-    color: #5c6b72;
-    margin: auto;
-    width: 900px;
-}
-#footer #footer-wrap div {
-    margin: 15px;
-}
-#home-card {
-    width: 300px;
-}
-#home-card #card-style {
-    background: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #d9d9d980;
-    display: flex;
-    flex-direction: column;
-    max-height: 80vh;
-    justify-content: center;
-    overflow: auto;
-    position: sticky;
-    text-align: center;
-    top: 10vh;
-    width: 300px;
-}
+    border: #ffffff80 1px solid; border-radius: 10px; color: #fff; padding: 10px 15px; transition: background 0.25s, border 0.25s, color 0.25s; } #archives .categories-tags span a:hover { background: #fff !important; border: #a5c2f5 1px solid; color: #5c6b72; }
+#archives .category, #archives .tags .tag, .article .info .category, .article .info .tags, .article .info .tags .tag { display: inline-block; margin-right: 10px; } #archives h3 { margin: 10px 0; } #crypto { margin: 50px 0; } #crypto.failure { border-color: #ea4a5a; color: #ea4a5a; } #crypto.failure:focus { box-shadow: 0 0 0 3px #ea4a5a4d; } #crypto.success { border-color: #34d058; color: #34d058; } #footer { font-size: 14px; margin-top: 150px; padding-bottom: 20px; text-align: center; width: 100%; } #footer #footer-icon { color: #66afef; display: inline-block; font-size: 18px; margin: 0 10px; } #footer #footer-wrap { border-top: 1px solid #aaa; color: #5c6b72; margin: auto; width: 1200px; } #footer #footer-wrap div { margin: 15px; } #home-card { width: 300px; } #home-card #card-style { background: #fff; border: none; border-radius: 10px; box-shadow: 0 0 20px #d9d9d980; display: flex; flex-direction: column; max-height: 80vh; justify-content: center; overflow: auto; position: sticky; text-align: center; top: 10vh; width: 300px; }
 #home-card #card-div {
     overflow: auto;
     padding: 25px 0;
@@ -159,11 +85,7 @@
 #home-head {
     display: flex;
     height: 100vh;
-    width: 100vw;
-}
-#home-head #home-background {
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 100vw; } #home-head #home-background { background-position: center; background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     left: 0;
@@ -172,44 +94,7 @@
     width: 100vw;
     z-index: -1;
 }
-#home-head #home-info .info {
-    align-items: center;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-#home-head #home-info .loop:nth-child(1) {
-    animation: loop1 10s linear infinite;
-    background: #fff;
-    border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
-    opacity: 0.3;
-    transform: rotate(30deg);
-}
-#home-head #home-info .loop:nth-child(2) {
-    animation: loop2 15s linear infinite;
-    background: #fff;
-    border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
-    opacity: 0.45;
-    transform: rotate(60deg);
-}
-#home-head #home-info .loop:nth-child(3) {
-    animation: loop3 10s linear infinite;
-    background: #fff;
-    border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
-    opacity: 0.3;
-    transform: rotate(90deg);
-}
-#home-head #home-info .loop:nth-child(4) {
-    animation: loop4 15s linear infinite;
-    background: #fff;
-    border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
-    opacity: 0.45;
-    transform: rotate(120deg);
-}
-#home-head #home-info,
-#home-posts {
-    margin: auto;
+#home-head #home-info .info { align-items: center; border-radius: 50%; display: flex; justify-content: center; text-align: center; } #home-head #home-info .loop:nth-child(1) { animation: loop1 10s linear infinite; background: #fff; border-radius: 38% 62% 63% 37%/41% 44% 56% 59%; opacity: 0.3; transform: rotate(30deg); } #home-head #home-info .loop:nth-child(2) { animation: loop2 15s linear infinite; background: #fff; border-radius: 38% 62% 63% 37%/41% 44% 56% 59%; opacity: 0.45; transform: rotate(60deg); } #home-head #home-info .loop:nth-child(3) { animation: loop3 10s linear infinite; background: #fff; border-radius: 38% 62% 63% 37%/41% 44% 56% 59%; opacity: 0.3; transform: rotate(90deg); } #home-head #home-info .loop:nth-child(4) { animation: loop4 15s linear infinite; background: #fff; border-radius: 38% 62% 63% 37%/41% 44% 56% 59%; opacity: 0.45; transform: rotate(120deg); } #home-head #home-info, #home-posts { margin: auto;
 }
 #home-posts .page-current {
     align-items: center;
@@ -456,6 +341,36 @@
     margin-bottom: 50px;
     z-index: 1000;
 }
+
+.toc-artical {
+    position: relative;
+}
+
+.toc-artical .toc-title{
+    font-weight: bold;
+}
+
+#toc {
+    font-size: 15px;
+    margin: 30px;
+}
+
+#toc .toc{
+    padding: 0
+}
+
+#toc li , .toc li {
+    list-style-type: none
+}
+
+#toc ol {
+    margin: 0;
+}
+
+#toc .toc-child {
+    padding-left: 1.5em
+}
+
 #timeline-wrap {
     display: flex;
     flex-direction: column-reverse;
@@ -884,7 +799,7 @@ ol li {
     .article,
     #archives,
     #footer #footer-wrap {
-        width: 900px;
+        width: 1200px;
     }
     .home-posts-wrap-no-card #home-posts {
         margin: auto;
@@ -972,4 +887,326 @@ ol li {
     ol {
         padding-left: 20px;
     }
+    .article {
+        margin-top: 50px;
+    }
 }
+
+/* 卡片容器 - 响应式网格布局 */
+  .friends-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* 单个卡片样式 */
+  .friend-card {
+    display: flex;
+    height: 140px;
+    width: 360;
+    text-decoration: none; /* 移除链接下划线 */
+    color: inherit; /* 继承文字颜色 */
+    border: 4px solid #eaeaea;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+
+  .friend-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  /* 头像区域（固定宽度） */
+  .friend-avatar {
+    width: 140px;
+    flex-shrink: 0;
+  }
+  
+  .friend-avatar img {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    top: 10%; /* 50% - (60%/2) */
+    left: calc(50% - 30%);
+    object-fit: contain;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    pointer-events: none;
+  }
+
+  @keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  /* 文字区域（自适应剩余空间） */
+  .friend-info {
+    font-size: 16px; /* 基准大小 */
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .friend-info h3 {
+    font-size: 1.2em; /* 19.2px */
+    margin-bottom: 0.3em;
+    margin-top: 0.3em;
+  }
+  
+  .friend-info p {
+    font-size: 0.875em;  /* 14px */
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+    transition: font-size 0.3s ease; /* 平滑过渡 */
+  }
+  
+  @media (max-width: 768px) {
+    .friend-info {
+      font-size: 15px; /* 移动端基准略小 */
+        }
+
+    .friends-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        width: 100%;
+        padding: 20px;
+        }
+        
+        /* 单个卡片样式 */
+        .friend-card {
+        display: flex;
+        height: 140px;
+        width: 400px;
+        text-decoration: none; /* 移除链接下划线 */
+        color: inherit; /* 继承文字颜色 */
+        border: 4px solid #eaeaea;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.85);
+        margin-left: 10px;
+        }
+    }
+
+
+/* page 界面添加背景图片 */
+.page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .page-container::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/background3.jpg'); /* 图片路径 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* 置于内容下层 */
+    opacity: 0.75; /* 透明度0-1 */
+  }
+
+
+  @media (max-width: 768px) {
+    .page-container::before {
+      background-attachment: scroll; /* 移动端取消固定背景 */
+    }
+    .page-content {
+      background-color: rgba(255, 255, 255, 0.9); /* 移动端提高可读性 */
+    }
+  }
+
+  /* 视差滚动效果 */
+.page-container::before {
+    background-attachment: fixed;
+    transform: translateZ(0);
+  }
+  
+  /* 动态渐变透明度 */
+  .page-content {
+    background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.9) 0%,
+      rgba(255,255,255,0.7) 100%
+    );
+  }
+
+  
+#post-toc-card {
+    width: 250px;
+    position: relative;
+}
+
+#toc-card-style {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    max-height: 60vh;
+    justify-content: center;
+    overflow: auto;
+    position: fixed;
+    text-align: left;
+    top: 20vh;
+    width: 250px;
+}
+
+#post-toc-card #toc-card-div {
+    overflow: auto;
+    z-index: 9999;
+}
+
+
+body:has(#comment:in-view) #post-toc-card {
+  display: none;
+}
+
+
+
+/* 文章内容和目录的分布设计 */
+.article-wrap {
+    display: flex;
+    max-width: 100%;
+    width: auto;
+    right: auto;
+    padding: 20px;
+    gap: 50px;
+  }
+  
+  .article-content {
+    flex: 5;
+    min-width: 0; /* 防止flex项目溢出 */
+    max-width: 100%;
+    width: auto;
+    padding: 1em;
+
+  }
+  
+  .article-toc {
+    flex: 1; 
+    min-width: 0;
+  }
+  
+    /* 图片响应式处理 */
+    img,
+    iframe,
+    video,
+    audio {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        height: auto;
+      }
+
+  
+/* 响应式设计 - 小屏幕改为单列 */
+@media (max-width: 1300px) {
+    .article-wrap {
+      flex-direction: column;
+      margin: 20px;
+      
+      width: auto;
+    }
+    
+    .article-content{
+        margin: auto;
+        
+    }
+    .article-toc {
+      flex: none;
+      width: auto;
+    }
+    
+    .article-toc {
+      display: none;
+      order: -1; /* 小屏幕上目录显示在上方 */
+      margin-bottom: 30px;
+    }
+    
+    .toc-card {
+      display: none;
+      position: static;
+    }
+
+    .article,
+    #archives,
+    #footer #footer-wrap {
+        width: 100%;
+    }
+
+    /* 图片响应式处理 */
+    img,
+    iframe,
+    video,
+    audio {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+  }
+
+  /* 手机端适配 */
+  @media (max-width: 700px) {
+    .article-wrap {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        width: auto;
+      }
+      
+      .article-content{
+          margin: 0px;
+          padding: 0;
+      }
+      .article-toc {
+        flex: none;
+        width: auto;
+      }
+      
+      .article-toc {
+        display: none;
+        order: -1; /* 小屏幕上目录显示在上方 */
+        margin-bottom: 30px;
+      }
+      
+      .toc-card {
+        display: none;
+        position: static;
+      }
+  
+      .article,
+      #archives,
+      #footer #footer-wrap {
+          width: 100%;
+          margin-top: 20px;
+      }
+  
+      /* 图片响应式处理 */
+      img,
+      iframe,
+      video,
+      audio {
+          display: block;
+          margin: 15px auto;
+          max-width: 100%;
+          height: auto;
+      }
+  }
