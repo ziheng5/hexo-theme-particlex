@@ -166,11 +166,11 @@ footer:
 
 ### 3.2.4. 友链数据（推荐独立文件）
 
-友链页面支持从站点根目录的 `_data/friends.yml` 读取数据（推荐）。
+友链页面支持从站点根目录的 `source/_data/friends.yml` 读取数据（推荐，注意是博客项目根目录，不是主题目录）。
 
 `_config.yml` 里的 `my_friends` 仍可用，用于兼容旧配置；当两者同时存在时，优先使用 `site.data.friends`。
 
-`_data/friends.yml` 同时支持对象和数组两种写法：
+`source/_data/friends.yml` 同时支持对象和数组两种写法：
 
 ```yaml
 # 对象写法（键名作为展示名称）
