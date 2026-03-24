@@ -6,6 +6,7 @@ const app = Vue.createApp({
             hiddenMenu: false,
             showMenuItems: false,
             menuColor: false,
+            isDark: false,
             scrollTop: 0,
             renderers: [],
         };
@@ -17,9 +18,24 @@ const app = Vue.createApp({
     },
     mounted() {
         window.addEventListener("scroll", this.handleScroll, true);
+        this.initTheme();
         this.render();
     },
     methods: {
+        initTheme() {
+            const stored = localStorage.getItem("particlex-theme");
+            if (stored === "dark" || stored === "light") {
+                this.isDark = stored === "dark";
+            } else {
+                this.isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            }
+            document.body.classList.toggle("dark-mode", this.isDark);
+        },
+        toggleTheme() {
+            this.isDark = !this.isDark;
+            localStorage.setItem("particlex-theme", this.isDark ? "dark" : "light");
+            document.body.classList.toggle("dark-mode", this.isDark);
+        },
         render() {
             for (let i of this.renderers) i();
         },

@@ -351,12 +351,15 @@
 }
 
 #toc {
-    font-size: 15px;
-    margin: 30px;
+    font-size: 14px;
+    margin: 0;
+    padding: 16px 14px 18px;
 }
 
 #toc .toc{
-    padding: 0
+    max-height: calc(60vh - 70px);
+    overflow: auto;
+    padding: 0 4px 2px 0;
 }
 
 #toc li , .toc li {
@@ -368,7 +371,46 @@
 }
 
 #toc .toc-child {
-    padding-left: 1.5em
+    padding-left: 1em
+}
+
+#toc .sidebar-title {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#toc .toc-list-item,
+#toc .toc li {
+    margin: 2px 0;
+}
+
+#toc .toc-link,
+#toc .toc a {
+    border-radius: 8px;
+    color: #425466;
+    display: block;
+    line-height: 1.35;
+    overflow: visible;
+    padding: 6px 10px;
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+#toc .toc-link:hover,
+#toc .toc a:hover {
+    background: #edf4ff;
+    color: #246bce;
+}
+
+#toc .is-active-link {
+    background: #e7f0ff;
+    color: #1d5cb5 !important;
+    font-weight: 600;
 }
 
 #timeline-wrap {
@@ -1047,7 +1089,7 @@ ol li {
 
   
 #post-toc-card {
-    width: 250px;
+    width: 280px;
     position: relative;
 }
 
@@ -1058,16 +1100,16 @@ ol li {
     display: flex;
     flex-direction: column;
     max-height: 60vh;
-    justify-content: center;
-    overflow: auto;
+    justify-content: flex-start;
+    overflow: hidden;
     position: fixed;
     text-align: left;
     top: 20vh;
-    width: 250px;
+    width: 280px;
 }
 
 #post-toc-card #toc-card-div {
-    overflow: auto;
+    overflow: hidden;
     z-index: 9999;
 }
 
@@ -1210,3 +1252,87 @@ body:has(#comment:in-view) #post-toc-card {
           height: auto;
       }
   }
+
+/* Theme toggle */
+#menu .theme-toggle {
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 15px;
+    margin-left: 12px;
+    padding: 0;
+}
+
+#menu .theme-toggle.mobile {
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+
+#menu .theme-toggle.mobile .item {
+    align-items: center;
+    display: flex;
+}
+
+#menu.menu-color .theme-toggle {
+    color: #fff;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background: #0b1220;
+    color: #d4dbe8;
+}
+
+body.dark-mode #menu {
+    background: #182235;
+}
+
+body.dark-mode #menu.menu-color {
+    background: #111827cc;
+}
+
+body.dark-mode #menu #desktop-menu .title,
+body.dark-mode #menu #desktop-menu a,
+body.dark-mode #menu #mobile-menu .title,
+body.dark-mode #menu #mobile-menu .items a,
+body.dark-mode #menu .theme-toggle {
+    color: #e5e7eb;
+}
+
+body.dark-mode .article,
+body.dark-mode #archives,
+body.dark-mode #home-card #card-style,
+body.dark-mode #toc-card-style {
+    background: #111827;
+    color: #d4dbe8;
+    box-shadow: 0 6px 24px #0000004d;
+}
+
+body.dark-mode .article a,
+body.dark-mode #archives a,
+body.dark-mode #home-card #card-div a {
+    color: #9cc7ff;
+}
+
+body.dark-mode #toc .toc-link,
+body.dark-mode #toc .toc a {
+    color: #d4dbe8;
+}
+
+body.dark-mode #toc .toc-link:hover,
+body.dark-mode #toc .toc a:hover,
+body.dark-mode #toc .is-active-link {
+    background: #1f3a60;
+    color: #dbeafe !important;
+}
+
+body.dark-mode #footer #footer-wrap {
+    border-top-color: #334155;
+    color: #9aa7bb;
+}
