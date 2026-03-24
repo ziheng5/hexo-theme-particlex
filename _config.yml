@@ -194,6 +194,8 @@ twikoo:
     lang:
 
 # FriendLinks
+# 推荐将友链列表写在站点根目录的 `_data/friends.yml` 中，
+# 主题会优先读取 `site.data.friends`，`my_friends` 仅用于兼容旧配置。
 my_friends:
     清風之戀:
         url: https://blog.qingfengzl.top/

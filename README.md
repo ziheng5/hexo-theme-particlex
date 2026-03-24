@@ -164,6 +164,28 @@ footer:
         link:
 ```
 
+### 3.2.4. 友链数据（推荐独立文件）
+
+友链页面支持从站点根目录的 `_data/friends.yml` 读取数据（推荐）。
+
+`_config.yml` 里的 `my_friends` 仍可用，用于兼容旧配置；当两者同时存在时，优先使用 `site.data.friends`。
+
+`_data/friends.yml` 同时支持对象和数组两种写法：
+
+```yaml
+# 对象写法（键名作为展示名称）
+清風之戀:
+  url: https://blog.qingfengzl.top/
+  avatar: https://blog.qingfengzl.top/_astro/matsuri.CKUHXjMu_Z1Oql9k.webp
+  desc: 清風之戀の空想森林
+
+# 数组写法（用 name 作为展示名称）
+- name: SeanDictionary
+  url: https://seandictionary.top
+  avatar: https://seandictionary.top/wp-content/uploads/2024/09/哭哭_透明.png
+  desc: 一个苦逼的IoT学生
+```
+
 ## 3.3. 功能配置
 
 ### 3.3.1. Polyfill
