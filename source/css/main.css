@@ -376,9 +376,10 @@
 
 #toc .sidebar-title {
     display: block;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     margin-bottom: 10px;
+    margin-left: 20px;
 }
 
 #toc .toc-list-item,
