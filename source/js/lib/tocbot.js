@@ -28,6 +28,7 @@
             const heading = headings[i];
             if (!heading.id) heading.id = `toc-heading-${i + 1}`;
             links[i].setAttribute("href", `#${heading.id}`);
+            links[i].setAttribute("title", (heading.textContent || "").trim());
         }
     };
 
@@ -53,6 +54,7 @@
             link.className = "toc-link";
             link.href = `#${heading.id}`;
             link.textContent = text;
+            link.title = text;
 
             item.appendChild(link);
             list.appendChild(item);
