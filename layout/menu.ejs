@@ -9,10 +9,6 @@
             <span>&ensp;<%= key %></span>
         </a>
         <% }); %>
-        <button class="theme-toggle" type="button" @click="toggleTheme">
-            <i :class="isDark ? 'fa-solid fa-sun fa-fw' : 'fa-solid fa-moon fa-fw'"></i>
-            <span>&ensp;{{ isDark ? 'Light' : 'Dark' }}</span>
-        </button>
     </nav>
     <nav id="mobile-menu">
         <div class="title" @click="showMenuItems = !showMenuItems">
@@ -31,14 +27,6 @@
                     </div>
                 </a>
                 <% }); %>
-                <button class="theme-toggle mobile" type="button" @click="toggleTheme">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i :class="isDark ? 'fa-solid fa-sun fa-fw' : 'fa-solid fa-moon fa-fw'"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">{{ isDark ? 'Light' : 'Dark' }}</div>
-                    </div>
-                </button>
             </div>
         </transition>
     </nav>
