@@ -19,15 +19,14 @@ const app = Vue.createApp({
         window.addEventListener("scroll", this.handleScroll, true);
         this.render();
         this.$nextTick(() => {
-            this.normalizePostTocAnchors();
-            this.enablePostTocSmoothScroll();
+            this.bindPostTocLinks();
         });
     },
     methods: {
         render() {
             for (let i of this.renderers) i();
         },
-        normalizePostTocAnchors() {
+        bindPostTocLinks() {
             const tocRoot = document.querySelector("#toc");
             if (!tocRoot) return;
 
@@ -39,68 +38,26 @@ const app = Vue.createApp({
             );
             if (!tocLinks.length || !headings.length) return;
 
-            const normalizeText = (text) => (text || "").replace(/\s+/g, " ").trim();
-            const usedIds = new Set(headings.map((heading) => heading.id).filter(Boolean));
-            const headingTextMap = new Map();
+            const count = Math.min(tocLinks.length, headings.length);
+            for (let i = 0; i < count; i++) {
+                const heading = headings[i];
+                const tocLink = tocLinks[i];
+                if (!heading.id) heading.id = `toc-heading-${i + 1}`;
 
-            headings.forEach((heading) => {
-                const key = normalizeText(heading.textContent);
-                if (!headingTextMap.has(key)) headingTextMap.set(key, []);
-                headingTextMap.get(key).push(heading);
-            });
-
-            const ensureHeadingId = (heading, index) => {
-                if (heading.id) return heading.id;
-                let id = `toc-heading-${index + 1}`;
-                let seed = 1;
-                while (usedIds.has(id)) {
-                    seed += 1;
-                    id = `toc-heading-${index + 1}-${seed}`;
-                }
-                heading.id = id;
-                usedIds.add(id);
-                return id;
-            };
-
-            tocLinks.forEach((tocLink, index) => {
-                const href = tocLink.getAttribute("href") || "";
-                const rawId = href.startsWith("#")
-                    ? decodeURIComponent(href.slice(1))
-                    : "";
-                if (rawId && document.getElementById(rawId)) return;
-
-                const key = normalizeText(tocLink.textContent);
-                const candidates = headingTextMap.get(key) || [];
-                const heading = candidates.shift();
-                if (!heading) return;
-
-                const id = ensureHeadingId(heading, index);
-                tocLink.setAttribute("href", `#${id}`);
-            });
-        },
-        enablePostTocSmoothScroll() {
-            const tocRoot = document.querySelector("#toc");
-            if (!tocRoot) return;
-
-            const tocLinks = Array.from(tocRoot.querySelectorAll("a[href^='#']"));
-            tocLinks.forEach((tocLink) => {
+                tocLink.setAttribute("href", `#${heading.id}`);
                 tocLink.addEventListener("click", (event) => {
-                    const href = tocLink.getAttribute("href") || "";
-                    if (!href.startsWith("#")) return;
-
-                    const id = decodeURIComponent(href.slice(1));
-                    const target = id ? document.getElementById(id) : null;
+                    event.preventDefault();
+                    const target = document.getElementById(heading.id);
                     if (!target) return;
 
-                    event.preventDefault();
                     const targetTop = target.getBoundingClientRect().top + window.scrollY - 90;
                     window.scrollTo({
                         top: targetTop,
                         behavior: "smooth",
                     });
-                    history.replaceState(null, "", `#${id}`);
+                    history.replaceState(null, "", `#${heading.id}`);
                 });
-            });
+            }
         },
         handleScroll() {
             let wrap = this.$refs.homePostsWrap;
