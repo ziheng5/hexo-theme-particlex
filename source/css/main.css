@@ -1101,7 +1101,7 @@ ol li {
     flex-direction: column;
     max-height: 60vh;
     justify-content: flex-start;
-    overflow: auto;
+    overflow: hidden;
     position: fixed;
     text-align: left;
     top: 20vh;
@@ -1109,7 +1109,7 @@ ol li {
 }
 
 #post-toc-card #toc-card-div {
-    overflow: auto;
+    overflow: hidden;
     z-index: 9999;
 }
 
