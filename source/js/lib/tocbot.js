@@ -6,13 +6,29 @@
                 const href = link.getAttribute("href") || "";
                 const id = href.startsWith("#") ? decodeURIComponent(href.slice(1)) : "";
                 const target = id ? document.getElementById(id) : null;
-                if (!target) return;
+                if (!target) {
+                    event.preventDefault();
+                    return;
+                }
                 event.preventDefault();
                 const targetTop = target.getBoundingClientRect().top + window.scrollY - 90;
                 window.scrollTo({ top: targetTop, behavior: "smooth" });
                 history.replaceState(null, "", `#${id}`);
             });
         });
+    };
+
+    const normalizeTocLinksByOrder = (tocRoot, contentRoot) => {
+        const links = Array.from(tocRoot.querySelectorAll("a"));
+        const headings = Array.from(contentRoot.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+        if (!links.length || !headings.length) return;
+
+        const count = Math.min(links.length, headings.length);
+        for (let i = 0; i < count; i++) {
+            const heading = headings[i];
+            if (!heading.id) heading.id = `toc-heading-${i + 1}`;
+            links[i].setAttribute("href", `#${heading.id}`);
+        }
     };
 
     const renderFallbackToc = () => {
@@ -69,6 +85,7 @@
             scrollSmoothOffset: -90,
             headingsOffset: 90,
         });
+        normalizeTocLinksByOrder(tocRoot, contentRoot);
         bindSmoothScroll(document.querySelector("#toc"));
     };
 
