@@ -1,37 +1,12 @@
 (() => {
-    const bindFallbackTocLinks = () => {
-        const tocRoot = document.querySelector("#toc");
-        const contentRoot = document.querySelector(".article-content .content");
-        if (!tocRoot || !contentRoot) return;
-
-        const tocLinks = Array.from(tocRoot.querySelectorAll("a[href^='#']"));
-        const headings = Array.from(contentRoot.querySelectorAll("h1, h2, h3, h4, h5, h6"));
-        if (!tocLinks.length || !headings.length) return;
-
-        const normalizeText = (text) => (text || "").replace(/\s+/g, " ").trim();
-        const headingMap = new Map();
-
-        headings.forEach((heading, index) => {
-            const key = normalizeText(heading.textContent);
-            if (!heading.id) heading.id = `toc-heading-${index + 1}`;
-            if (!headingMap.has(key)) headingMap.set(key, []);
-            headingMap.get(key).push(heading);
-        });
-
-        tocLinks.forEach((link) => {
-            const href = link.getAttribute("href") || "";
-            let id = href.startsWith("#") ? decodeURIComponent(href.slice(1)) : "";
-            let target = id ? document.getElementById(id) : null;
-            if (!target) {
-                const key = normalizeText(link.textContent);
-                const candidates = headingMap.get(key) || [];
-                target = candidates.shift();
-                if (!target) return;
-                id = target.id;
-                link.setAttribute("href", `#${id}`);
-            }
-
+    const bindSmoothScroll = (tocRoot) => {
+        const links = Array.from(tocRoot.querySelectorAll("a[href^='#']"));
+        links.forEach((link) => {
             link.addEventListener("click", (event) => {
+                const href = link.getAttribute("href") || "";
+                const id = href.startsWith("#") ? decodeURIComponent(href.slice(1)) : "";
+                const target = id ? document.getElementById(id) : null;
+                if (!target) return;
                 event.preventDefault();
                 const targetTop = target.getBoundingClientRect().top + window.scrollY - 90;
                 window.scrollTo({ top: targetTop, behavior: "smooth" });
@@ -40,15 +15,47 @@
         });
     };
 
+    const renderFallbackToc = () => {
+        const tocRoot = document.querySelector("#toc .toc");
+        const contentRoot = document.querySelector(".article-content .content");
+        if (!tocRoot || !contentRoot) return;
+
+        const headings = Array.from(contentRoot.querySelectorAll("h1, h2, h3, h4, h5, h6"));
+        if (!headings.length) return;
+
+        const list = document.createElement("ol");
+        list.className = "toc-list";
+        headings.forEach((heading, index) => {
+            if (!heading.id) heading.id = `toc-heading-${index + 1}`;
+            const text = (heading.textContent || "").trim();
+            if (!text) return;
+
+            const item = document.createElement("li");
+            item.className = "toc-list-item";
+
+            const link = document.createElement("a");
+            link.className = "toc-link";
+            link.href = `#${heading.id}`;
+            link.textContent = text;
+
+            item.appendChild(link);
+            list.appendChild(item);
+        });
+
+        tocRoot.innerHTML = "";
+        tocRoot.appendChild(list);
+        bindSmoothScroll(tocRoot);
+    };
+
     const initTocbot = () => {
         if (!window.tocbot) {
-            bindFallbackTocLinks();
+            renderFallbackToc();
             return;
         }
         const tocRoot = document.querySelector("#toc .toc");
         const contentRoot = document.querySelector(".article-content .content");
         if (!tocRoot || !contentRoot) {
-            bindFallbackTocLinks();
+            renderFallbackToc();
             return;
         }
 
@@ -62,6 +69,7 @@
             scrollSmoothOffset: -90,
             headingsOffset: 90,
         });
+        bindSmoothScroll(document.querySelector("#toc"));
     };
 
     window.addEventListener("load", initTocbot);
