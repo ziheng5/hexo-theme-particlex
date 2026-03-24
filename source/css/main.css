@@ -390,15 +390,15 @@
 #toc .toc a {
     border-radius: 8px;
     color: #425466;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
+    display: block;
     line-height: 1.35;
-    overflow: hidden;
+    overflow: visible;
     padding: 6px 10px;
     text-decoration: none;
     transition: background-color .2s ease, color .2s ease;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 #toc .toc-link:hover,
